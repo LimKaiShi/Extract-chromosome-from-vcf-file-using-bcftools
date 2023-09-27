@@ -1,4 +1,4 @@
-# Extract
+# View and extract variant from vcf file by using bcftools
 ## 1. Install bcftools 
 Clarification: Summaized from source: https://raw.githubusercontent.com/samtools/bcftools/develop/INSTALL
 
