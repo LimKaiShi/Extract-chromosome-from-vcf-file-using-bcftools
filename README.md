@@ -79,7 +79,14 @@ To know more what info is present in vcf file can go to the pdf link I attached 
 bcftools query -r <chromosome_number>:<starting_position>-<end_position> -f '%CHROM,%POS,%REF,%ALT[%GT]\n' <Name of your vcf file in .gz> >> output.csv
 ```
 
-# Extract variants for SMPD1
+## 3. Extract variants for SMPD1
+
+I am using hg19 version of SMPD1 in this script
+```
+echo "CHROM,POS,REF,ALT,SAMPLE_ID_GENO" > SMPD1_hg19.csv
+bcftools query -r 11:6411670-6416228 -f '%CHROM,%POS,%REF,%ALT[%GT]\n' <Name of your vcf file in .gz> >> SMPD1_hg19.csv
+```
+
 
 
 
