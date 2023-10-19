@@ -79,6 +79,17 @@ To know more what info is present in vcf file can go to the pdf link I attached 
 bcftools query -r <chromosome_number>:<starting_position>-<end_position> -f '%CHROM,%POS,%REF,%ALT[%GT]\n' <Name of your vcf file in .gz> >> output.csv
 ```
 
+If wanted to extract it and remain at .vcf format:
+```
+#go to the directory where the file is located
+
+bcftools --filter \
+--reagions chr:78798-80892 \
+--output [give the file name]
+[give the file path or if is already in that directory then give the input file name]
+
+```
+
 ## 3. Extract variants for SMPD1
 
 I am using hg19 version of SMPD1 in this script
