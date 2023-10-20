@@ -90,12 +90,15 @@ bcftools --filter \
 
 ```
 
-## 3. Extract variants for SMPD1
+## 3. Extract variants for LRRK2
 
-I am using hg19 version of SMPD1 in this script
+I am using hg19 version of LRRK2 in this script as the SG10K are based on hg19 reference
 ```
-echo "CHROM,POS,REF,ALT,SAMPLE_ID_GENO" > SMPD1_hg19.csv
-bcftools query -r 11:6411670-6416228 -f '%CHROM,%POS,%REF,%ALT[%GT]\n' <Name of your vcf file in .gz> >> SMPD1_hg19.csv
+%%bash
+bcftools filter \
+  --regions 12:40590546-40763087\
+  --output extracted_LRRK2_sg10k.vcf\
+  chr12.vcf.gz
 ```
 
 
